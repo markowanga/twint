@@ -96,9 +96,10 @@ class Twint:
                 consecutive_errors_count += 1
                 if consecutive_errors_count < self.config.Retries_count:
                     #################################
-                    delay = random.randint(60, 120)
-                    print('sleeping for {} secs'.format(delay))
+                    delay = random.randint(80, 120)
+                    print('sleeping for {} secs start'.format(delay))
                     time.sleep(delay)
+                    print('sleeping end')
                     #################################
                     self.user_agent = await get.RandomUserAgent()
                     continue
